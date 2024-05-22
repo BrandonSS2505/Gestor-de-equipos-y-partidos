@@ -1,0 +1,7 @@
+{
+  "name": "DeportesFei",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
