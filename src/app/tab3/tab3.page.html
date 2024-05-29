@@ -1,71 +1,59 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" class="main-header">
   <ion-toolbar>
     <ion-title>
-      <img src="assets/logo.png" alt="Logo" style="height: 40px;">
+      <img src="assets/logo.png" alt="Logo" class="logo">
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header collapse="condense" class="condensed-header">
     <ion-toolbar>
       <ion-title size="large">
-        <img src="assets/logo.png" alt="Logo" style="height: 40px;">
+        <img src="assets/logo.png" alt="Logo" class="logo">
       </ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-segment [(ngModel)]="selectedCategory">
-    <ion-segment-button value="voleybol">
+  <ion-segment color="primary" class="custom-segment" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="1">
       <ion-label>Voleybol</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="basquetbol">
+    <ion-segment-button value="2">
       <ion-label>Basquetbol</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="futbol">
+    <ion-segment-button value="3">
       <ion-label>Futbol</ion-label>
     </ion-segment-button>
   </ion-segment>
 
-  <ion-card (click)="irADetalle('voleybol')" *ngIf="selectedCategory === 'voleybol'">
-    <img src="assets/voleibol.jpg" />
-    <ion-card-header>
-      <ion-card-title>PROXXYS Vs X</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>13:30</p>
-    </ion-card-content>
-  </ion-card>
-  
-  <ion-card (click)="irADetalle('voleybol2')" *ngIf="selectedCategory === 'voleybol'">
-    <img src="assets/voleibol.jpg" />
-    <ion-card-header>
-      <ion-card-title>PROXXYS Vs X</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>13:30</p>
-    </ion-card-content>
-  </ion-card>
-  
-
-  <ion-card (click)="irADetalle('basquetbol')" *ngIf="selectedCategory === 'basquetbol'">
-    <img src="assets/baloncesto.jpg" />
-    <ion-card-header>
-      <ion-card-title>Hawks Vs Voley team</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>14:00</p>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card (click)="irADetalle('futbol')" *ngIf="selectedCategory === 'futbol'">
-    <img src="assets/futbol.jpg" />
-    <ion-card-header>
-      <ion-card-title>Aurus vs Los magos</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>14:30</p>
-    </ion-card-content>
-  </ion-card>
-
+  <ion-content>
+    <ion-card *ngFor="let partido of partidos" (click)="verPartidos(partido)" class="custom-card">
+      <ion-card-header>
+        <ion-card-title>{{ partido.Partido }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>Equipo 1:</ion-label>
+          <ion-text>{{ partido.Equipo1 }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Equipo 2:</ion-label>
+          <ion-text>{{ partido.Equipo2 }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Fecha:</ion-label>
+          <ion-text>{{ partido.Fecha }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Estatus:</ion-label>
+          <ion-text>{{ partido.estatus }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Torneo:</ion-label>
+          <ion-text>{{ partido.Torneo }}</ion-text>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
 </ion-content>

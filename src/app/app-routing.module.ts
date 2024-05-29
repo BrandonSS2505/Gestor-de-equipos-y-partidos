@@ -22,7 +22,7 @@ const routes: Routes = [
     component:DetallesComponent
   },
   {
-    path: 'torneos/:category',
+    path: 'torneos',
     component:TorneoComponent
   }
 ];

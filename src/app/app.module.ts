@@ -11,8 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DetallesComponent } from './detalles/detalles.component';
 import { TorneoComponent } from './torneo/torneo.component';
-import { TeamRegistrationModule } from './team-registration/team-registration.module';  
-
+import { TeamRegistrationModule } from './team-registration/team-registration.module'; 
+ 
 @NgModule({
   declarations: [AppComponent,DetallesComponent,TorneoComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule],

@@ -1,0 +1,61 @@
+.main-header {
+    background: #ffffff; /* Color de fondo del header principal */
+    ion-toolbar {
+      --background: transparent;
+    }
+  }
+  
+  .logo {
+    height: 40px;
+  }
+  
+  .condensed-header {
+    ion-toolbar {
+      --background: #3880ff; /* Color de fondo del header condensado */
+    }
+  }
+  
+  .custom-segment {
+    margin-top: 20px;
+    ion-segment-button {
+      ion-label {
+        font-weight: bold; /* Fuente más gruesa para los segmentos */
+      }
+      &.segment-checked {
+        background-color: #3880ff; /* Color de fondo cuando está seleccionado */
+        color: white; /* Color de texto cuando está seleccionado */
+      }
+    }
+  }
+  
+  .custom-card {
+    margin: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el efecto de profundidad */
+    transition: transform 0.2s;
+    
+    &:hover {
+      transform: scale(1.05); /* Escala la tarjeta ligeramente cuando se pasa el ratón por encima */
+    }
+  
+    ion-card-header {
+      background: #f8f9fa; /* Fondo del header de la tarjeta */
+      border-bottom: 1px solid #ddd; /* Línea divisoria */
+    }
+  
+    ion-card-title {
+      font-size: 1.2em; /* Tamaño de fuente más grande */
+      color: #333; /* Color del texto */
+    }
+  
+    ion-item {
+      --background: transparent;
+      ion-label {
+        font-weight: bold; /* Fuente más gruesa para los labels */
+        color: #666; /* Color del label */
+      }
+      ion-text {
+        color: #333; /* Color del texto */
+      }
+    }
+  }

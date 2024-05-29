@@ -1,5 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab2"></ion-back-button>
+    </ion-buttons>
     <ion-title>
       <img src="assets/logo.png" alt="Logo" style="height: 40px;">
     </ion-title>
@@ -7,15 +10,6 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">
-        <img src="assets/logo.png" alt="Logo" style="height: 40px;">
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-
- 
   <ion-card >
     <img src="assets/voleibol.jpg" />
     <ion-card-header>
