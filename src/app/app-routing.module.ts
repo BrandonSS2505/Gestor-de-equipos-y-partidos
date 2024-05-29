@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-<<<<<<< Updated upstream
 import { TeamRegistrationComponent } from './team-registration/team-registration.component';
-=======
 import { DetallesComponent } from './detalles/detalles.component';
 import { TorneoComponent } from './torneo/torneo.component';
->>>>>>> Stashed changes
 
 const routes: Routes = [
   {
