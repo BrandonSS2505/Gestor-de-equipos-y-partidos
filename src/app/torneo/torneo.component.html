@@ -15,33 +15,22 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-segment [(ngModel)]="selectedCategory">
-    <ion-segment-button value="voleybol">
-      <ion-label>Voleybol</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="basquetbol">
-      <ion-label>Basquetbol</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="futbol">
-      <ion-label>Futbol</ion-label>
-    </ion-segment-button>
-  </ion-segment>
-
-  <ion-card (click)="irTorneos('voleybol')" *ngIf="selectedCategory === 'voleybol'">
+ 
+  <ion-card >
     <img src="assets/voleibol.jpg" />
     <ion-card-header>
-      <ion-card-title>Fierrocopa</ion-card-title>
+      <ion-card-title>Proxys vs Titanes</ion-card-title>
     </ion-card-header>
   </ion-card>
 
-  <ion-card (click)="irTorneos('basquetbol')" *ngIf="selectedCategory === 'basquetbol'">
+  <ion-card>
     <img src="assets/baloncesto.jpg" />
     <ion-card-header>
       <ion-card-title>Copa Piston</ion-card-title>
     </ion-card-header>
   </ion-card>
 
-  <ion-card (click)="irTorneos('futbol')" *ngIf="selectedCategory === 'futbol'">
+  <ion-card>
     <img src="assets/futbol.jpg" />
     <ion-card-header>
       <ion-card-title>FierroCopa</ion-card-title>

@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      <img src="assets/logo.png" alt="Logo" style="height: 40px;">
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,63 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title size="large">
+        <img src="assets/logo.png" alt="Logo" style="height: 40px;">
+      </ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-segment [(ngModel)]="selectedCategory">
+    <ion-segment-button value="voleybol">
+      <ion-label>Voleybol</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="basquetbol">
+      <ion-label>Basquetbol</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="futbol">
+      <ion-label>Futbol</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-card (click)="irADetalle('voleybol')" *ngIf="selectedCategory === 'voleybol'">
+    <img src="assets/voleibol.jpg" />
+    <ion-card-header>
+      <ion-card-title>PROXXYS Vs X</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>13:30</p>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card (click)="irADetalle('voleybol2')" *ngIf="selectedCategory === 'voleybol'">
+    <img src="assets/voleibol.jpg" />
+    <ion-card-header>
+      <ion-card-title>PROXXYS Vs X</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>13:30</p>
+    </ion-card-content>
+  </ion-card>
+  
+
+  <ion-card (click)="irADetalle('basquetbol')" *ngIf="selectedCategory === 'basquetbol'">
+    <img src="assets/baloncesto.jpg" />
+    <ion-card-header>
+      <ion-card-title>Hawks Vs Voley team</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>14:00</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="irADetalle('futbol')" *ngIf="selectedCategory === 'futbol'">
+    <img src="assets/futbol.jpg" />
+    <ion-card-header>
+      <ion-card-title>Aurus vs Los magos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>14:30</p>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

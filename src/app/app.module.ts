@@ -6,9 +6,11 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DetallesComponent } from './detalles/detalles.component';
+import { TorneoComponent } from './torneo/torneo.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,DetallesComponent,TorneoComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
