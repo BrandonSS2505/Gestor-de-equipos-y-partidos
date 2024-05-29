@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class Tab3Page {
   partidos: any[] = []; // Arreglo para almacenar la lista de partidos
+  showTorneo: boolean = true; // Bandera para controlar la visibilidad del campo "Torneo"
 
   constructor(private router: Router, private http: HttpClient) {}
 
@@ -37,6 +38,7 @@ export class Tab3Page {
     this.http.get<any[]>(apiUrl).subscribe(
       (response) => {
         this.partidos = response; // Asignar la lista de partidos obtenida al arreglo 'partidos'
+        this.showTorneo = false; // Ocultar el campo "Torneo" cuando se selecciona un filtro
       },
       (error) => {
         console.error('Error al obtener los partidos:', error);
@@ -47,6 +49,6 @@ export class Tab3Page {
   verPartidos(partido: any) {
     // Aquí puedes navegar a una página de detalles o realizar otra acción
     console.log('Ver detalles del partido:', partido);
-    this.router.navigate(['/torneos']); // Cambia '/torneos' si tienes una ruta específica para detalles de partidos
+    this.router.navigate(['/detalles']); // Cambia '/torneos' si tienes una ruta específica para detalles de partidos
   }
 }
