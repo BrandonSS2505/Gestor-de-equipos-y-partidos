@@ -20,6 +20,9 @@ interface EquipoData {
   templateUrl: './team-registration.component.html',
   styleUrls: ['./team-registration.component.scss'],
 })
+
+
+
 export class TeamRegistrationComponent {
   teamName: string = '';
   teamCaptain: string = '';
@@ -34,6 +37,10 @@ export class TeamRegistrationComponent {
   ];
 
   constructor(private http: HttpClient) {}
+
+  goBack() {
+    window.history.back();
+  }
 
   onSubmit() {
     const equipoData: EquipoData = {

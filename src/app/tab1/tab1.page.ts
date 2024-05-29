@@ -10,6 +10,9 @@ export class Tab1Page {
 
   constructor(private router: Router) {
   }
+  goBack() {
+    this.router.navigate(['']);
+  }
 
   irRegistrarTeam() {
     this.router.navigate(['/registrarTeam']); 

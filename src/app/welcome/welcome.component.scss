@@ -1,45 +1,65 @@
 .welcome-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    text-align: center;
-    padding: 20px; // Espacio alrededor del contenedor
-  }
-  
-  .image-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px; /* Espacio entre las imágenes y el subtítulo */
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px; // Espacio alrededor del contenedor
+  background: linear-gradient(135deg, #ffffff, #ffffff); // Fondo degradado
+  color: #fff; // Color del texto para que resalte sobre el fondo
+}
 
-  .main-title {
-    font-size: 3em; // Tamaño grande para el título
-    margin-bottom: 20px; // Espacio entre el título y la imagen
-    color: #333; // Color del texto
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; // Espacio entre las imágenes y el subtítulo
+}
+
+.main-title {
+  font-size: 3em; // Tamaño grande para el título
+  margin-bottom: 20px; // Espacio entre el título y la imagen
+  color: #000000; // Color del texto
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); // Sombra para destacar el título
+}
+
+.full-width-image {
+  width: 10%;
+  height: auto; // Mantiene la proporción de la imagen
+  margin: 10px;
+  // border-radius: 50%; // Bordes redondeados
+  // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Sombra para dar profundidad
+  // transition: transform 0.3s; // Transición para el hover
+  
+  // &:hover {
+  //   transform: scale(1.1); // Efecto de zoom al pasar el cursor
+  // }
+}
+
+.sub-title {
+  font-size: 1.5em; // Tamaño para el subtítulo
+  margin-bottom: 20px; // Espacio entre el subtítulo y el botón
+  color: #000000; // Color del texto
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); // Sombra para destacar el subtítulo
+  max-width: 300px; // Ancho máximo para el contenedor del texto
+  line-height: 1.2; // Altura de línea para ajustar el espaciado
+  white-space: pre-line; // Permite los saltos de línea
+}
+
+.start-button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 1.2em; // Tamaño de fuente más grande para el botón
+  background-color: #ff8000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s; // Transiciones
+  
+  &:hover {
+    background-color: #003f7f;
+    transform: translateY(-2px); // Efecto de elevación al pasar el cursor
   }
-  
-  .full-width-image {
-    width: 10%;
-    height: auto; // Mantiene la proporción de la imagen
-    margin: 10px;
-  }
-  
-  .start-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: #ff8000;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  
-    &:hover {
-      background-color: #0056b3;
-    }
-  }
-  
+}

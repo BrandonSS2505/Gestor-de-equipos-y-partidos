@@ -1,6 +1,72 @@
+ion-header {
+  ion-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  .back-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+
+    &:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+  }
+
+  ion-title {
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 40px;
+      margin-left: 10px; // Espacio entre el texto del título y la imagen
+    }
+  }
+}
+
 .width-image {
-    width: 100%; /* Ocupa todo el ancho del contenedor padre */
-    height: auto; /* Mantiene la proporción de la imagen */
-    display: block; /* Para centrar la imagen */
-    margin: auto; /* Para centrar la imagen */
+  width: 100%; /* Ocupa todo el ancho del contenedor padre */
+  height: auto; /* Mantiene la proporción de la imagen */
+  display: block; /* Para centrar la imagen */
+  margin: auto; /* Para centrar la imagen */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+  transition: transform 0.3s; /* Transición para el hover */
+
+  &:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el cursor */
+  }
+}
+
+ion-card {
+  margin: 20px; /* Espacio alrededor de cada card */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transiciones */
+
+  &:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el cursor */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  }
+
+  ion-card-header {
+    text-align: center;
+    background-color: #f8f9fa; /* Fondo claro para el header */
+    padding: 10px 0;
+    border-radius: 0 0 10px 10px; /* Bordes redondeados en la parte inferior */
+  }
+
+  ion-card-title {
+    font-size: 1.2em;
+    color: #333; /* Color del texto */
+  }
 }
