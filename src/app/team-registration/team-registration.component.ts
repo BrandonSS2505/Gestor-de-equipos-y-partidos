@@ -20,9 +20,6 @@ interface EquipoData {
   templateUrl: './team-registration.component.html',
   styleUrls: ['./team-registration.component.scss'],
 })
-
-
-
 export class TeamRegistrationComponent {
   teamName: string = '';
   teamCaptain: string = '';

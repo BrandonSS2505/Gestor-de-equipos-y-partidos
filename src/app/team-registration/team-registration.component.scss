@@ -1,6 +1,6 @@
 // Define colors and basic styles
 $primary-color: #3498db;
-$secondary-color: #ff8000;
+$secondary-color: #ce7e1d;
 $font-family: 'Arial, sans-serif';
 
 body {
@@ -62,10 +62,15 @@ div {
   }
 }
 
+
+.container {
+  text-align: left;
+}
+
 button[type="submit"] {
-  display: block;
-  width: 100%;
-  padding: 10px 0;
+  display: inline-block; /* Permitir que el botón solo ocupe el espacio necesario */
+  width: auto; /* Ajustar el ancho al contenido */
+  padding: 10px 20px; /* Mantener el padding adecuado */
   background-color: $secondary-color;
   color: #fff;
   border: none;
@@ -73,7 +78,6 @@ button[type="submit"] {
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
-  align-self: center;
 
   &:hover {
     background-color: darken($primary-color, 10%);
@@ -88,13 +92,20 @@ button[type="submit"] {
 }
 
 .back-button {
-  background-color: #007bff;
+  display: inline-block; /* Permitir que el botón solo ocupe el espacio necesario */
+  width: auto; /* Ajustar el ancho al contenido */
+  padding: 10px 20px; /* Mantener el padding adecuado */
+  background-color: $secondary-color;
   color: #fff;
   border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 1rem;
   cursor: pointer;
-  font-size: 16px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
 }
 
 .back-button:hover {
@@ -103,4 +114,44 @@ button[type="submit"] {
 
 .back-button .fas {
   margin-right: 5px;
+}
+
+.container {
+  text-align: left;
+}
+
+button[type="submit"],
+.add-button,
+.back-button,
+.remove-button {
+  display: inline-block;
+  width: auto;
+  padding: 10px 20px;
+  background-color: $secondary-color;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover,
+.add-button:hover,
+.back-button:hover,
+.remove-button:hover {
+  background-color: darken($primary-color, 10%);
+}
+
+.add-button {
+  margin-right: 20px; /* Espacio a la derecha del botón "Agregar participante" */
+}
+
+button[type="submit"] {
+  margin-top: 20px; /* Espacio adicional encima del botón "Crear" */
+}
+
+.remove-button {
+  background-color: red; /* Color rojo para el botón de eliminar */
 }

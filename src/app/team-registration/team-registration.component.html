@@ -1,30 +1,29 @@
-<button (click)="goBack()"  class="back-button">Volver</button>
-
-
 <div class="container">
+  <button (click)="goBack()" class="back-button">Volver</button>
   <h1 class="main-title">Registro de equipo</h1>
 
-
-<form (ngSubmit)="onSubmit()">
-  <div>
-    <label for="teamName">Nombre del equipo:</label>
-    <input type="text" id="teamName" name="teamName" [(ngModel)]="teamName" required>
-  </div>
-  <div>
-    <label for="teamCaptain">Capitán del equipo:</label>
-    <input type="text" id="teamCaptain" name="teamCaptain" [(ngModel)]="teamCaptain" required>
-    <label for="teamCaptainMatricula">Matrícula:</label>
-    <input type="text" id="teamCaptainMatricula" name="teamCaptainMatricula" [(ngModel)]="teamCaptainMatricula" required>
-  </div>
-  <div>
-    <h1 class="main-title">Mínimo 5 jugadores y máximo 10</h1>
-  </div>
-  <div *ngFor="let participante of participantes; let i = index">
-    <label for="participante{{i}}Nombre">Nombre participante:</label>
-    <input type="text" id="participante{{i}}Nombre" name="participante{{i}}Nombre" [(ngModel)]="participantes[i].nombre" required>
-    <label for="participante{{i}}Matricula">Matrícula:</label>
-    <input type="text" id="participante{{i}}Matricula" name="participante{{i}}Matricula" [(ngModel)]="participantes[i].matricula" required>
-  </div>
-  <button type="submit">Crear</button>
-</form>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="teamName">Nombre del equipo:</label>
+      <input type="text" id="teamName" name="teamName" [(ngModel)]="teamName" required>
+    </div>
+    <div>
+      <label for="teamCaptain">Capitán del equipo:</label>
+      <input type="text" id="teamCaptain" name="teamCaptain" [(ngModel)]="teamCaptain" required>
+      <label for="teamCaptainMatricula">Matrícula:</label>
+      <input type="text" id="teamCaptainMatricula" name="teamCaptainMatricula" [(ngModel)]="teamCaptainMatricula" required>
+    </div>
+    <div>
+      <h1 class="main-title">Mínimo 5 jugadores y máximo 10</h1>
+    </div>
+    <div *ngFor="let participante of participantes; let i = index">
+      <label for="participante{{i}}Nombre">Nombre participante:</label>
+      <input type="text" id="participante{{i}}Nombre" name="participante{{i}}Nombre" [(ngModel)]="participantes[i].nombre" required>
+      <label for="participante{{i}}Matricula">Matrícula:</label>
+      <input type="text" id="participante{{i}}Matricula" name="participante{{i}}Matricula" [(ngModel)]="participantes[i].matricula" required>
+      <button type="button" (click)="eliminarParticipante(i)" class="remove-button" *ngIf="participantes.length > 5">Eliminar</button>
+    </div>
+    <button type="button" (click)="agregarParticipante()" class="add-button">Agregar participante</button>
+    <button type="submit">Registrar equipo</button>
+  </form>
 </div>
