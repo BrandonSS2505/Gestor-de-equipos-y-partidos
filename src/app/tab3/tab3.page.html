@@ -1,20 +1,4 @@
-<ion-header [translucent]="true" class="main-header">
-  <ion-toolbar>
-    <ion-title>
-      <img src="assets/logo.png" alt="Logo" class="logo">
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense" class="condensed-header">
-    <ion-toolbar>
-      <ion-title size="large">
-        <img src="assets/logo.png" alt="Logo" class="logo">
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <ion-segment color="primary" class="custom-segment" (ionChange)="segmentChanged($event)">
     <ion-segment-button value="1">
       <ion-label>Voleybol</ion-label>
@@ -27,33 +11,31 @@
     </ion-segment-button>
   </ion-segment>
 
-  <ion-content>
-    <ion-card *ngFor="let partido of partidos" (click)="verPartidos(partido)" class="custom-card">
-      <ion-card-header>
-        <ion-card-title>{{ partido.Partido }}</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-item>
-          <ion-label>Equipo 1:</ion-label>
-          <ion-text>{{ partido.Equipo1 }}</ion-text>
-        </ion-item>
-        <ion-item>
-          <ion-label>Equipo 2:</ion-label>
-          <ion-text>{{ partido.Equipo2 }}</ion-text>
-        </ion-item>
-        <ion-item>
-          <ion-label>Fecha:</ion-label>
-          <ion-text>{{ partido.Fecha }}</ion-text>
-        </ion-item>
-        <ion-item>
-          <ion-label>Estatus:</ion-label>
-          <ion-text>{{ partido.estatus }}</ion-text>
-        </ion-item>
-        <ion-item *ngIf="showTorneo">
-          <ion-label>Torneo:</ion-label>
-          <ion-text>{{ partido.Torneo }}</ion-text>
-        </ion-item>
-      </ion-card-content>
-    </ion-card>
-  </ion-content>
+  <ion-card *ngFor="let partido of partidos" (click)="verPartidos(partido)" class="custom-card">
+    <ion-card-header>
+      <ion-card-title>{{ partido.Partido }}</ion-card-title>
+      <ion-img *ngIf="!filtroSeleccionado" src="assets/pelotas.jpg" class="deporte-image"></ion-img>
+       <ion-img *ngIf="partido.Deporte === 'voleibol'" src="assets/voleibol.jpg" class="deporte-image"></ion-img>
+       <ion-img *ngIf="partido.Deporte === 'basquetbol'" src="assets/futbol.jpg" class="deporte-image"></ion-img>
+        <ion-img *ngIf="partido.Deporte === 'futbol'" src="assets/baloncesto.jpg" class="deporte-image"></ion-img>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Equipo 1:</ion-label>
+        <ion-text>{{ partido.Equipo1 }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label>Equipo 2:</ion-label>
+        <ion-text>{{ partido.Equipo2 }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label>Fecha:</ion-label>
+        <ion-text>{{ partido.Fecha }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label>Estatus:</ion-label>
+        <ion-text>{{ partido.estatus }}</ion-text>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

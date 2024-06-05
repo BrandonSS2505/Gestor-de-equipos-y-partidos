@@ -1,4 +1,7 @@
 <ion-content [fullscreen]="true">
+  <!-- Imagen en la parte superior del contenido -->
+  <img src="assets/pelotas.jpg" alt="Header Image" style="width: 100%;">
+
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">
@@ -6,16 +9,19 @@
       </ion-title>
     </ion-toolbar>
   </ion-header>
-  <div style="height: 20px;"></div>
-  <div style="text-align: center; font-size: 40px; font-weight: bold;">PROXXYS Vs X</div>
-  <!-- Resultado grande -->
-  <div style="text-align: center; font-size: 30px; font-weight: bold;">Resultado</div>
-  <div style="text-align: center; font-size: 40px; font-weight: bold; color:orange">21 - 10</div>
+  
+  <!-- Contenido principal -->
+  <div style="padding: 20px; text-align: center;">
+    <h1 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 20px;">PROXXYS Vs X</h1>
+    <!-- Resultado grande -->
+    <div style="font-size: 2rem; font-weight: bold; margin-bottom: 20px;">Resultado</div>
+    <div style="font-size: 3rem; font-weight: bold; color: orange; margin-bottom: 40px;">21 - 10</div>
+  </div>
+
+  <!-- Footer -->
   <ion-footer class="ion-no-border">
     <ion-toolbar class="ion-text-center">
-      <ion-button (click)="goBack()" class="back-button" shape="round" color="warning" >
-        <span style="color: white;">Volver</span>
-      </ion-button>
+      <button class="start-button" (click)="goBack()">Volver</button>
     </ion-toolbar>
   </ion-footer>
 </ion-content>

@@ -1,61 +1,101 @@
 .main-header {
-    background: #ffffff; /* Color de fondo del header principal */
-    ion-toolbar {
-      --background: transparent;
+  background: #ffffff; /* Color de fondo del header principal */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para el header */
+
+  ion-toolbar {
+    --background: transparent;
+    height: 60px; /* Altura del toolbar */
+    display: flex;
+    align-items: center; /* Centrar contenido verticalmente */
+  }
+}
+
+.logo {
+  height: 40px;
+  margin: 0 10px; /* Espaciado alrededor del logo */
+}
+
+.condensed-header {
+  ion-toolbar {
+    --background: #3880ff; /* Color de fondo del header condensado */
+    height: 50px; /* Altura del toolbar condensado */
+  }
+}
+
+.custom-segment {
+  margin-top: 20px;
+  ion-segment-button {
+    border-radius: 20px; /* Bordes redondeados */
+    transition: background-color 0.3s, color 0.3s; /* Efecto de transición */
+    
+    ion-label {
+      font-weight: bold; /* Fuente más gruesa para los segmentos */
     }
-  }
-  
-  .logo {
-    height: 40px;
-  }
-  
-  .condensed-header {
-    ion-toolbar {
-      --background: #3880ff; /* Color de fondo del header condensado */
+    
+    &.segment-checked {
+      background-color: #3880ff; /* Color de fondo cuando está seleccionado */
+      color: white; /* Color de texto cuando está seleccionado */
     }
-  }
-  
-  .custom-segment {
-    margin-top: 20px;
-    ion-segment-button {
-      ion-label {
-        font-weight: bold; /* Fuente más gruesa para los segmentos */
-      }
-      &.segment-checked {
-        background-color: #3880ff; /* Color de fondo cuando está seleccionado */
-        color: white; /* Color de texto cuando está seleccionado */
-      }
+
+    &:not(.segment-checked) {
+      background-color: #f0f0f0; /* Color de fondo cuando no está seleccionado */
+      color: #333; /* Color de texto cuando no está seleccionado */
     }
-  }
-  
-  .custom-card {
-    margin: 20px;
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el efecto de profundidad */
-    transition: transform 0.2s;
-  
+
     &:hover {
-      transform: scale(1.05); /* Escala la tarjeta ligeramente cuando se pasa el ratón por encima */
+      background-color: #e0e0e0; /* Color de fondo al pasar el ratón */
     }
-  
-    ion-card-header {
-      background: #f8f9fa; /* Fondo del header de la tarjeta */
-      border-bottom: 1px solid #ddd; /* Línea divisoria */
-    }
-  
-    ion-card-title {
-      font-size: 1.2em; /* Tamaño de fuente más grande */
-      color: #333; /* Color del texto */
-    }
-  
+  }
+}
+
+.custom-card {
+  margin: 20px;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el efecto de profundidad */
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: scale(1.05); /* Escala la tarjeta ligeramente cuando se pasa el ratón por encima */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más profunda al pasar el ratón */
+  }
+
+  background: linear-gradient(to bottom right, #ffffff, #f1f1f1); /* Gradiente de fondo */
+
+  ion-card-header {
+    background: #f8f9fa; /* Fondo del header de la tarjeta */
+    border-bottom: 1px solid #ddd; /* Línea divisoria */
+    position: relative;
+    padding-bottom: 15px;
+  }
+
+  ion-card-title {
+    font-size: 1.4em; /* Tamaño de fuente más grande */
+    color: #333; /* Color del texto */
+    margin: 10px 0; /* Espaciado alrededor del título */
+  }
+
+  ion-img.deporte-image {
+    width: 100%;
+    border-radius: 10px; /* Bordes redondeados para las imágenes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para las imágenes */
+    margin-bottom: 10px; /* Espaciado inferior */
+  }
+
+  ion-card-content {
+    padding: 20px;
+
     ion-item {
       --background: transparent;
+      margin: 10px 0; /* Espaciado vertical entre ítems */
+      
       ion-label {
         font-weight: bold; /* Fuente más gruesa para los labels */
         color: #666; /* Color del label */
       }
+
       ion-text {
         color: #333; /* Color del texto */
       }
     }
   }
+}

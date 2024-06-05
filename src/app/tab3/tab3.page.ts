@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class Tab3Page {
   partidos: any[] = []; // Arreglo para almacenar la lista de partidos
-  showTorneo: boolean = true; // Bandera para controlar la visibilidad del campo "Torneo"
+  filtroSeleccionado: boolean = false; // Variable para controlar la visibilidad de la imagen de "pelotas"
 
   constructor(private router: Router, private http: HttpClient) {}
 
@@ -38,7 +38,7 @@ export class Tab3Page {
     this.http.get<any[]>(apiUrl).subscribe(
       (response) => {
         this.partidos = response; // Asignar la lista de partidos obtenida al arreglo 'partidos'
-        this.showTorneo = false; // Ocultar el campo "Torneo" cuando se selecciona un filtro
+        this.filtroSeleccionado = true; // Mostrar la imagen de "pelotas" cuando se selecciona un filtro
       },
       (error) => {
         console.error('Error al obtener los partidos:', error);

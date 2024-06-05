@@ -7,17 +7,24 @@ ion-header {
   }
 
   .back-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
+    --background: #fff; /* Establece el color de fondo del botón */
+    --color: #fff; /* Establece el color del texto del botón */
+    --border-radius: 5px; /* Establece el radio de borde del botón */
+    --padding: 10px 20px; /* Establece el relleno del botón */
+    --font-size: 16px; /* Establece el tamaño de fuente del botón */
+    --transition: background-color 0.3s, transform 0.3s; /* Establece la transición */
+  
+    background-color: var(--background); /* Aplica el color de fondo */
+    color: var(--color); /* Aplica el color del texto */
+    border: none; /* Quita el borde */
+    border-radius: var(--border-radius); /* Aplica el radio de borde */
+    padding: var(--padding); /* Aplica el relleno */
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s;
-
+    font-size: var(--font-size); /* Aplica el tamaño de fuente */
+    transition: var(--transition); /* Aplica la transición */
+  
     &:hover {
-      background-color: #0056b3;
+      background-color: var(--background); /* Cambia el color de fondo en hover */
       transform: translateY(-2px);
     }
   }

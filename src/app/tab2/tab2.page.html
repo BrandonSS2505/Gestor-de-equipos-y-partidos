@@ -1,20 +1,4 @@
-<ion-header [translucent]="true" class="main-header">
-  <ion-toolbar>
-    <ion-title>
-      <img src="assets/logo.png" alt="Logo" class="logo">
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense" class="condensed-header">
-    <ion-toolbar>
-      <ion-title size="large">
-        <img src="assets/logo.png" alt="Logo" class="logo">
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <ion-segment (ionChange)="segmentChanged($event)" color="primary" class="custom-segment">
     <ion-segment-button value="voleibol">
       <ion-label>Voleybol</ion-label>
@@ -27,25 +11,27 @@
     </ion-segment-button>
   </ion-segment>
 
-  <ion-content>
-    <ion-card *ngFor="let torneo of torneos" (click)="verPartidos(torneo.id)" class="custom-card">
-      <ion-card-header>
-        <ion-card-title>{{ torneo.Torneo }}</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-item>
-          <ion-label>Deporte:</ion-label>
-          <ion-text>{{ torneo.Deporte }}</ion-text>
-        </ion-item>
-        <ion-item>
-          <ion-label>Inicio:</ion-label>
-          <ion-text>{{ torneo.Inicio }}</ion-text>
-        </ion-item>
-        <ion-item>
-          <ion-label>Estatus:</ion-label>
-          <ion-text>{{ torneo.estatus }}</ion-text>
-        </ion-item>
-      </ion-card-content>
-    </ion-card>
-  </ion-content>
+  <ion-card *ngFor="let torneo of torneos" (click)="verPartidos(torneo.id)" class="custom-card">
+    <ion-card-header>
+      <ion-card-title>{{ torneo.Torneo }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+            <!-- Mostrar imagen según el deporte -->
+            <ion-img *ngIf="torneo.Deporte === 'voleibol'" src="assets/voleibol.jpg" class="deporte-image"></ion-img>
+            <ion-img *ngIf="torneo.Deporte === 'basquetbol'" src="assets/baloncesto.jpg" class="deporte-image"></ion-img>
+            <ion-img *ngIf="torneo.Deporte === 'futbol'" src="assets/futbol.jpg" class="deporte-image"></ion-img>
+      <ion-item>
+        <ion-label>Deporte:</ion-label>
+        <ion-text>{{ torneo.Deporte }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label>Inicio:</ion-label>
+        <ion-text>{{ torneo.Inicio }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label>Estatus:</ion-label>
+        <ion-text>{{ torneo.estatus }}</ion-text>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
